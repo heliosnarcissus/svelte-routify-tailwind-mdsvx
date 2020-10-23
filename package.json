@@ -4,15 +4,16 @@
   "scripts": {
     "watch:tailwind": "postcss public/tailwind.css -o public/index.css -w",
     "build:tailwind": "NODE_ENV=production postcss public/tailwind.css -o public/index.css",
-    "build": "npm run routify -c && rollup -c && build:tailwind",
+    "build": "routify -b && rollup -c",
     "dev": " routify -c autobuild",
-    "start": "sirv public",
+    "start": "sirv public --single",
     "autobuild": "rollup -c -w"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^14.0.0",
     "@rollup/plugin-node-resolve": "^8.0.0",
     "@sveltech/routify": "^1.9.9",
+    "mdsvex": "^0.8.8",
     "npm-run-all": "^4.1.5",
     "postcss-cli": "^8.1.0",
     "rollup": "^2.3.4",
